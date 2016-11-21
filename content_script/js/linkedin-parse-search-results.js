@@ -11,7 +11,7 @@ LinkedInSearchResults = {
           profile_title = $(this).find(".company-name").text();
           if (typeof $(this).find(".entity-image").attr("data-li-src") == "undefined") { profile_pic = "https://www.gravatar.com/avatar/5e77b3f1a14972adadd3f32f5a0b217e?s=100&d=mm"; }
           else { profile_pic = "https://www.linkedin.com/"+$(this).find(".entity-image").attr("data-li-src"); }
-          profile_id = profile_name.hashCode();
+          profile_id = (profile_name + profile_title.substring(0,6)).hashCode();
           profiles.push({ "profile_path":  profile_path,
                           "profile_name": profile_name,
                           "profile_title": profile_title,
@@ -30,7 +30,7 @@ LinkedInSearchResults = {
           profile_name = $(this).find(".main-headline").text();
           profile_title = $(this).find(".description").text();
           profile_pic = $(this).find(".entity-img").attr("src");
-          profile_id = profile_name.hashCode();
+          profile_id = (profile_name + profile_title.substring(0,6)).hashCode();
           profiles.push({ "profile_path":  profile_path,
                           "profile_name": profile_name,
                           "profile_title": profile_title,
