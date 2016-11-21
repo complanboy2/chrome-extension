@@ -81,7 +81,7 @@ var LinkedinProfile = {
       }
     }
     else {
-      last_company_path = $html.find(".current-position .new-miniprofile-container a").first().attr("href");
+      last_company_path = $html.find(".current-position header .new-miniprofile-container a").first().attr("href");
     }
 
     return last_company_path;
