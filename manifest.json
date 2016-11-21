@@ -1,7 +1,7 @@
 {
   "name": "Hunter",
   "short_name": "Hunter",
-  "version": "1.9.4",
+  "version": "1.9.5",
   "manifest_version": 2,
   "description": "Hunter is the easiest way to find email addresses from anywhere on the web, with just one click.",
   "homepage_url": "https://hunter.io",
@@ -28,6 +28,7 @@
     "storage",
     "clipboardWrite",
     "activeTab",
+    "contextMenus",
     "http://*/*",
     "https://*/*"
   ],
@@ -35,7 +36,7 @@
     "scripts": [
       "shared/js/lib/jquery.min.js",
       "background/install-check.js",
-      "background/icon-color.js",
+      "background/icon.js",
       "background/webstats.js"],
     "persistent": false
   },

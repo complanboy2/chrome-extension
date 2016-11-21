@@ -68,3 +68,49 @@ function url_domain(data) {
          a.href = data;
   return a.hostname;
 }
+
+// Add context links on right click on the icon
+//
+function addBrowserMenuLinks() {
+  chrome.contextMenus.create({
+    "id": "dashboard",
+    "title": "Dashboard",
+    "contexts": ['browser_action'],
+  });
+
+  chrome.contextMenus.create({
+    "id": "leads",
+    "title": "My leads",
+    "contexts": ['browser_action'],
+  });
+
+  chrome.contextMenus.create({
+    "id": "upgrade",
+    "title": "Upgrade",
+    "contexts": ['browser_action'],
+  });
+
+  chrome.contextMenus.create({
+    "id": "faqs",
+    "title": "FAQs",
+    "contexts": ['browser_action'],
+  });
+}
+
+addBrowserMenuLinks();
+chrome.contextMenus.onClicked.addListener(function(info, tab) {
+  switch (info.menuItemId) {
+    case "dashboard":
+      chrome.tabs.create({ url: "https://hunter.io/dashboard?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=context_menu_browser_action" });
+      break;
+    case "leads":
+      chrome.tabs.create({ url: "https://hunter.io/leads_lists?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=context_menu_browser_action" });
+      break;
+    case "upgrade":
+      chrome.tabs.create({ url: "https://hunter.io/subscriptions?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=context_menu_browser_action" });
+      break;
+    case "faqs":
+      chrome.tabs.create({ url: "https://hunter.io/help/faq_categories/14?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=context_menu_browser_action" });
+      break;
+  }
+});
