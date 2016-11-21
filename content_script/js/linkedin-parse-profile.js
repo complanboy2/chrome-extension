@@ -47,7 +47,9 @@ var LinkedinProfile = {
       last_company = $html.find(".position-header h5").first().text();
     }
     else {
-      last_company = $html.find(".current-position h5:last-child a").first().text();
+      last_company = $html.find(".current-position header h5:last-child a").first().text();
+
+      if (last_company == "") { return undefined; }
     }
 
     return last_company;

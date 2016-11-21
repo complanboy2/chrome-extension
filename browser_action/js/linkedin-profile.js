@@ -395,8 +395,11 @@ var LinkedinProfile = {
       else if (typeof window.profile["domain"] != "undefined") {
         $("#ehunter_popup_ask_domain_message").html('No email found with <strong>' + window.profile["domain"] + '</strong>. Maybe try another domain name?');
       }
+      else if (typeof window.profile["last_company"] != "undefined") {
+        $("#ehunter_popup_ask_domain_message").html('We couldn\'t find the website of <strong>' + window.profile["last_company"] + '</strong>. Please enter the domain name to launch the search. <a href="https://google.com/search?q= ' + window.profile["last_company"] + '" target="_blank">Search the website on Google &#187;</a>');
+      }
       else {
-        $("#ehunter_popup_ask_domain_message").html('We couldn\'t find <strong>' + window.profile["last_company"] + '</strong> website. Please enter the domain name to launch the search. <a href="https://google.com/search?q= ' + window.profile["last_company"] + '" target="_blank">Search the website on Google &#187;</a>');
+        $("#ehunter_popup_ask_domain_message").html('It seems ' + window.profile["first_name"] + ' has no current position. If you know a company he works for, you can enter the domain name of this company to find the email address.');
       }
 
       $("#ehunter_popup_ask_domain").submit(function() {
