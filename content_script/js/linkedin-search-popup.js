@@ -61,7 +61,7 @@ var LinkedinSearchPopup = {
               <br/><br/>\n\
               <label id="ehunter_save_without_email_label">\n\
                 <i class="fa fa-square"></i>\n\
-                Save even if the email adress is not found.\n\
+                Save even if the email address is not found.\n\
               </label>\n\
             </div>\n\
             <div id="ehunter_search_popup_error"></div>\n\
