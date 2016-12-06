@@ -368,6 +368,8 @@
 #ehunter_popup_account a {
   color: #aaa;
   border-bottom: 1px dotted #aaa;
+  line-height: 24px;
+  margin-left: 10px;
 }
 
 #ehunter_popup_account a:hover {
@@ -400,5 +402,5 @@
 }
 
 #ehunter_popup .ehunter_list_select {
-  width: 300px;
+  width: 260px;
 }

@@ -28,11 +28,15 @@ LinkedinSearch = {
     var logo = chrome.extension.getURL('shared/img/orange_transparent_logo.png');
 
     $("#linkedin-search").prepend("\n\
-      <div class='linkedin-search-top'>\n\
-        <button id='linkedin-search-submit' class='orange-btn' disabled='disabled'>Find email addresses & save leads</button>\n\
-        <img class='linkedin-search-logo' src='" + logo + "' alt='Hunter'>\n\
+      <div class='linkedin-search-top-container'>\n\
+        <div class='linkedin-search-top'>\n\
+          <button id='linkedin-search-submit' class='orange-btn' disabled='disabled'>Find email addresses & save leads</button>\n\
+          <a href='https://hunter.io/search?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=browser_popup' target='_blank'>\n\
+            <img class='linkedin-search-logo' src='" + logo + "' alt='Hunter'>\n\
+          </a>\n\
+        </div>\n\
+        <div class='linkedin-profiles-selected'><strong>0 profiles</strong> selected</div>\n\
       </div>\n\
-      <div class='linkedin-profiles-selected'><strong>0 profiles</strong> selected</div>\n\
       <div class='select-all-profiles'>\n\
         <i class='fa fa-square'></i>\n\
         Select all\n\

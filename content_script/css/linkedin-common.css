@@ -2,13 +2,14 @@
   background: 0;
   border: 1px solid #ddd;
   border-radius: 3px;
-  width: 200px;
+  width: 190px;
   -webkit-appearance: menulist-button;
   text-indent: 0;
   font-size: 12px;
   height: 24px;
   color: #888;
-  transition: all 0.2s;
+  transition: all 0.1s;
+  float: left;
 }
 
 .ehunter_list_select:hover {

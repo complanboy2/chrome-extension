@@ -27,32 +27,34 @@ var LinkedinProfilePopup = {
 
     $("body").append('\n\
       <div id="ehunter_popup">\n\
-        <a href="https://hunter.io/chrome?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup#faq" target="_blank">\n\
+        <a href="https://hunter.io/help/faq_categories/14?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" target="_blank">\n\
           <i class="fa fa-question-circle ehunter_popup_question"></i>\n\
         </a>\n\
         <i class="fa fa-ellipsis-v ehunter_popup_drag"></i>\n\
         <div class="ehunter_popup_close">&times;</div>\n\
         <div class="ehunter_popup_name">\n\
-          ' + window.profile["first_name"] + ' ' + window.profile["last_name"] + '</div>\n\
-          <div id="ehunter_popup_error"></div>\n\
-          <form id="ehunter_popup_ask_domain">\n\
-            <div id="ehunter_popup_ask_domain_message"></div>\n\
-            <input placeholder="company.com" id="ehunter_popup_ask_domain_field" type="text" name="domain">\n\
-            <button class="orange-btn" type="submit">Find</button>\n\
-          </form>\n\
-          <div id="ehunter_popup_content_container">\n\
-            <div id="ehunter_popup_content"></div>\n\
-            <div id="ehunter_email_action_message"></div>\n\
-          </div>\n\
-          <div class="ehunter_popup_confidence_score"></div>\n\
-          <div id="ehunter_popup_results_link_container"></div>\n\
-          <div id="ehunter_popup_results_show">\n\
-            <div class="ehunter_popup_found_email_addresses"></div>\n\
-            <div class="ehunter_popup_parsed_email_addresses"></div>\n\
-          </div>\n\
-          <div id="ehunter_popup_account">\n\
+          ' + window.profile["first_name"] + ' ' + window.profile["last_name"] + '\n\
+        </div>\n\
+        <div id="ehunter_popup_error"></div>\n\
+        <form id="ehunter_popup_ask_domain">\n\
+          <div id="ehunter_popup_ask_domain_message"></div>\n\
+          <input placeholder="company.com" id="ehunter_popup_ask_domain_field" type="text" name="domain">\n\
+          <button class="orange-btn" type="submit">Find</button>\n\
+        </form>\n\
+        <div id="ehunter_popup_content_container">\n\
+          <div id="ehunter_popup_content"></div>\n\
+          <div id="ehunter_email_action_message"></div>\n\
+        </div>\n\
+        <div class="ehunter_popup_confidence_score"></div>\n\
+        <div id="ehunter_popup_results_link_container"></div>\n\
+        <div id="ehunter_popup_results_show">\n\
+          <div class="ehunter_popup_found_email_addresses"></div>\n\
+          <div class="ehunter_popup_parsed_email_addresses"></div>\n\
+        </div>\n\
+        <div id="ehunter_popup_account">\n\
           <div class="pull-right" id="ehunter_popup_requests"></div>\n\
           <div class="ehunter_list_select_container"></div>\n\
+          <a href="https://hunter.io/leads_lists?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup">My leads</a>\n\
         </div>\n\
       </div>\n\
     ');
@@ -207,9 +209,15 @@ var LinkedinProfilePopup = {
     window.profile["email"] = email_json.data.email;
     window.profile["confidence_score"] = email_json.data.score;
 
-    if (count_json.count > 1) { es = 'es' }
+    if (count_json.data.total > 1) { es = 'es' }
     else { es = '' }
-    $('#ehunter_popup_results_link_container').html('<a class="ehunter_popup_results_link" href="https://hunter.io/search/' + window.profile["domain"] + '?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" target="_blank">' + count_json.data.total + ' email address' + es + ' for ' + window.profile["domain"] + '<i class="fa fa-external-link"></i></a> <span class="ehunter_popup_separator">•</span> <span class="ehunter_popup_ask_domain">Try with an other domain name</span>');
+    $('#ehunter_popup_results_link_container').html('\n\
+      <a class="ehunter_popup_results_link" href="https://hunter.io/search/' + window.profile["domain"] + '?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" target="_blank">\n\
+        ' + numberWithCommas(count_json.data.total) + ' email address' + es + ' for ' + window.profile["domain"] + '\n\
+        <i class="fa fa-external-link"></i>\n\
+      </a>\n\
+      <span class="ehunter_popup_separator">•</span>\n\
+      <span class="ehunter_popup_ask_domain">Try with an other domain name</span>');
 
     $('#ehunter_popup_results_link_container').slideDown(300);
   },
@@ -391,7 +399,14 @@ var LinkedinProfilePopup = {
       });
       this_popup.saveOtherEmailAddress();
 
-      $(".ehunter_popup_found_email_addresses").append('<div class="ehunter_popup_email_list"><a class="ehunter_popup_results_link" href="https://hunter.io/search/' + window.profile["domain"] + '?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" target="_blank">See results for ' + window.profile["domain"] + '<i class="fa fa-external-link"></i></a> <span class="ehunter_popup_separator">•</span> <span class="ehunter_popup_ask_domain">Try with another domain name</span></div>');
+      $(".ehunter_popup_found_email_addresses").append('\n\
+        <div class="ehunter_popup_email_list">\n\
+          <a class="ehunter_popup_results_link" href="https://hunter.io/search/' + window.profile["domain"] + '?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" target="_blank">\n\
+            See results for ' + window.profile["domain"] + '<i class="fa fa-external-link"></i>\n\
+          </a>\n\
+          <span class="ehunter_popup_separator">•</span>\n\
+          <span class="ehunter_popup_ask_domain">Try with another domain name</span>\n\
+        </div>');
       this_popup.askNewDomainListener();
     });
 

@@ -51,7 +51,9 @@ var LinkedinSearchPopup = {
           <div id="ehunter_search_selection_popup">\n\
             <i class="fa fa-ellipsis-v ehunter_search_popup_drag"></i>\n\
             <div id="ehunter_search_popup_close">&times;</div>\n\
-            <img src="' + logo + '" alt="Hunter">\n\
+            <a href="https://hunter.io/search?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=browser_popup" target="_blank">\n\
+              <img src="' + logo + '" alt="Hunter">\n\
+            </a>\n\
             <div id="ehunter_search_popup_content_container">\n\
               <div id="ehunter_profile_selected">\n\
                 <strong>' + window.selected_profiles.length + ' profile' + s + '</strong> selected\n\

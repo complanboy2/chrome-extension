@@ -7,6 +7,16 @@
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   display: none;
+  margin: 104px 0 70px 0;
+}
+
+.linkedin-search-top-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10001;
+  border-bottom: 1px solid #eee;
 }
 
 .linkedin-search-logo {
@@ -79,7 +89,6 @@
 .linkedin-profiles-selected {
   padding: 0 0 14px;
   margin: 0 20px;
-  border-bottom: 1px solid #eee;
 }
 
 #linkedin-search-submit {
@@ -102,12 +111,19 @@
 }
 
 #linkedin-profiles-account {
-  margin: 12px 20px 0 20px;
-  padding: 14px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding: 14px 20px;
   color: #aaa;
   font-size: 13px;
   border-top: 1px solid #eee;
-  text-align: right;
+}
+
+#linkedin-profiles-account a {
+  line-height: 22px;
+  margin-left: 10px;
 }
 
 .linkedin-search-save-without-email {
