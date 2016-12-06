@@ -54,7 +54,7 @@ var LinkedinProfilePopup = {
         <div id="ehunter_popup_account">\n\
           <div class="pull-right" id="ehunter_popup_requests"></div>\n\
           <div class="ehunter_list_select_container"></div>\n\
-          <a href="https://hunter.io/leads_lists?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup">My leads</a>\n\
+          <a href="https://hunter.io/leads_lists?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup"  target="_blank">My leads</a>\n\
         </div>\n\
       </div>\n\
     ');
