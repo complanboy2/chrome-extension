@@ -26,21 +26,21 @@ function apiCall(api_key, endpoint, fn) {
     },
     error: function(xhr) {
       if (xhr.status == 400) {
-        showError('Sorry, something went wrong on the query.');
+        showError('Sorry, something went wrong on the query. This can be due to special characters.');
       }
       else if (xhr.status == 401) {
-        showError('Hunter Chrome extension seems not to be associated to your account. Please sign in to continue.<br/><br/><a href="https://hunter.io/chrome/welcome?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" class="orange-btn" target="_blank">Sign in</a>');
+        showError('Hunter Chrome extension seems not to be associated to your account or the API key it\'s using is no longer valid. Please sign in to continue.<br/><br/><a href="https://hunter.io/chrome/welcome?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" class="orange-btn" target="_blank">Sign in</a>');
       }
       else if (xhr.status == 429) {
         if (api_key != '') {
           showError('You\'ve reached your monthly quota. Please upgrade your account to continue using Hunter.<br/><br/><a href="https://hunter.io/subscription?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" class="orange-btn" target="_blank">Upgrade my account</a>');
         }
         else {
-          showError('You\'ve reached your daily limit, please connect to your Hunter account to continue. It\'s free and takes 30 seconds.<br/><br/><a href="https://hunter.io/users/sign_up?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" class="orange-btn" target="_blank">Create a free account</a><a href="https://hunter.io/chrome/welcome?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" class="ehunter_popup_signin_link" target="_blank">Sign in</a>');
+          showError('You\'ve reached your daily limit, please connect to your Hunter account to continue. It\'s free and takes only 30 seconds.<br/><br/><a href="https://hunter.io/users/sign_up?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" class="orange-btn" target="_blank">Create a free account</a><a href="https://hunter.io/chrome/welcome?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_popup" class="ehunter_popup_signin_link" target="_blank">Sign in</a>');
         }
       }
       else {
-        showError('Sorry, something went wrong. Please try again later.');
+        showError('Sorry, something went wrong (status code ' + xhr.status + '). Please try again later.');
       }
     }
   });

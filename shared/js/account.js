@@ -5,6 +5,7 @@ var Account = {
         url = "https://api.hunter.io/v2/account?api_key=" + api_key;
         $.ajax({
           url : url,
+          headers: {"Email-Hunter-Origin": "chrome_extension"},
           type : 'GET',
           dataType : 'json',
           success : function(json){

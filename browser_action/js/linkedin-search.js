@@ -31,7 +31,7 @@ LinkedinSearch = {
       <div class='linkedin-search-top-container'>\n\
         <div class='linkedin-search-top'>\n\
           <button id='linkedin-search-submit' class='orange-btn' disabled='disabled'>Find email addresses & save leads</button>\n\
-          <a href='https://hunter.io/search?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=browser_popup' target='_blank'>\n\
+          <a href='https://hunter.io/search?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_search_popup' target='_blank'>\n\
             <img class='linkedin-search-logo' src='" + logo + "' alt='Hunter'>\n\
           </a>\n\
         </div>\n\

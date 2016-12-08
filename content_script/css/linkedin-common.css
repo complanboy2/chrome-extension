@@ -10,6 +10,7 @@
   color: #888;
   transition: all 0.1s;
   float: left;
+  margin-right: 10px;
 }
 
 .ehunter_list_select:hover {

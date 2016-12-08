@@ -49,9 +49,12 @@ var LinkedinSearchPopup = {
 
         $("body").append('\n\
           <div id="ehunter_search_selection_popup">\n\
+            <a href="https://hunter.io/help/faq_categories/14?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_search_popup" target="_blank">\n\
+              <i class="fa fa-question-circle ehunter_search_popup_question"></i>\n\
+            </a>\n\
             <i class="fa fa-ellipsis-v ehunter_search_popup_drag"></i>\n\
             <div id="ehunter_search_popup_close">&times;</div>\n\
-            <a href="https://hunter.io/search?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=browser_popup" target="_blank">\n\
+            <a href="https://hunter.io/search?utm_source=chrome_extension&utm_medium=extension&utm_campaign=extension&utm_content=linkedin_search_popup" target="_blank">\n\
               <img src="' + logo + '" alt="Hunter">\n\
             </a>\n\
             <div id="ehunter_search_popup_content_container">\n\
@@ -65,6 +68,7 @@ var LinkedinSearchPopup = {
                 <i class="fa fa-square"></i>\n\
                 Save even if the email address is not found.\n\
               </label>\n\
+              <br/><br/>\n\
             </div>\n\
             <div id="ehunter_search_popup_error"></div>\n\
             <div id="ehunter_search_selection_popup_account">\n\

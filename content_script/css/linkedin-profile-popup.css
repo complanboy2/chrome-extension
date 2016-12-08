@@ -141,7 +141,8 @@
 #ehunter_popup_error {
   font-size: 16px;
   line-height: 22px;
-  margin: 20px 0 0 0;
+  padding: 30px 0 10px 0;
+  display: none;
 }
 
 .orange-btn {
@@ -370,7 +371,6 @@
   color: #aaa;
   border-bottom: 1px dotted #aaa;
   line-height: 24px;
-  margin-left: 10px;
 }
 
 #ehunter_popup_account a:hover {
